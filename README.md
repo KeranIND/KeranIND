@@ -1,71 +1,27 @@
 # Kiran Indugula
 
-**Founder, Chanamill | Software / Solutions Architect | Enterprise Data, Commerce Systems & Applied Personalization**
+**Founder, Chanamill | Software / Solutions Architect | Commerce, Data, Integration & Applied AI**
 
-I build systems across two domains I know firsthand:
+I build systems that connect **identity, decisioning, workflow, transactions, and real-world outcomes**.
 
-1. **enterprise CRM / commerce architecture** — large-volume customer data, deduplication, workflow automation, ownership/routing, APIs and downstream integrations
-2. **Chanamill** — FitID, measurement workflows, garment-spec matching, made-to-measure commerce, visualization, manufacturing orchestration and delivered-fit feedback
+I’m currently building **[Chanamill](https://chanamill.com)** — a personalized apparel platform centered on **FitID**, a reusable fit identity that connects body measurements, fit preferences, garment specifications, purchase decisions, manufacturing, and delivered-fit feedback.
 
-My public repositories are not generic interview projects. They are clean-room implementations of problem classes I have actually worked on, rewritten with synthetic data and public-safe abstractions so I can show the architecture without publishing employer or Chanamill proprietary code.
+My background spans enterprise CRM/data architecture, Salesforce/Apex/LWC, MuleSoft/REST integrations, large-volume deduplication and routing workflows, and consumer product engineering across Flutter and Next.js.
 
-## Public engineering work
+## Start here
 
-### [Enterprise CRM Entity Resolution Engine](https://github.com/KeranIND/entity-resolution-engine)
+If you are reviewing my work quickly, these four repositories show the progression from enterprise systems to Chanamill:
 
-Directly based on the problem domain behind my large-scale CRM deduplication work. My enterprise work included deduplication/merge systems across approximately **600K Leads and 2.4M Contacts**. The public implementation models Lead/Contact/Account adaptation, normalization, candidate generation, explainable scoring, canonical identity, merge survivorship and lineage.
+1. **[Chanamill FitID Personalization Engine](https://github.com/KeranIND/adaptive-personalization-engine)** — versioned FitID, garment-spec matching, explainable fit assessment, measurement provenance, and delivered-fit feedback.
+2. **[Enterprise CRM Entity Resolution Engine](https://github.com/KeranIND/entity-resolution-engine)** — multi-million-record identity resolution patterns, normalization, candidate generation, scoring, merge lineage, and downstream-safe routing.
+3. **[Chanamill Made-to-Measure Order Orchestrator](https://github.com/KeranIND/distributed-order-orchestrator)** — FitID snapshot locking, payment, production, QC, fulfillment, creator attribution, and fit-feedback capture.
+4. **[Engineering Architecture Notes](https://github.com/KeranIND/engineering-architecture-notes)** — architecture decisions across CRM integrations, idempotency, FitID versioning, 3D visualization boundaries, manufacturing, and closed-loop systems.
 
-```text
-CRM records → normalization → candidate generation → evidence scoring
-            → review/decision → canonical identity → safe merge lineage
-```
+These are **clean-room public implementations of problem classes I have actually worked on**. They use synthetic/public-safe abstractions and contain no employer code, private schemas, credentials, or Chanamill production IP.
 
-### [Chanamill Made-to-Measure Order Orchestrator](https://github.com/KeranIND/distributed-order-orchestrator)
+## Chanamill / FitID
 
-Models Chanamill's measurement-to-production workflow as an explicit distributed state machine: freeze a FitID/spec snapshot, authorize payment, create the production job, record QC, hand off fulfillment, deliver, and capture fit feedback.
-
-```text
-FitID + garment spec → order → production → QC → fulfillment
-                     → delivery → fit feedback
-```
-
-The important engineering problem is failure recovery across software and physical-world operations.
-
-### [Chanamill FitID Personalization Engine](https://github.com/KeranIND/adaptive-personalization-engine)
-
-Directly models the core Chanamill system boundary: versioned body measurements and fit preferences on one side, versioned garment specifications on the other, with explainable region-level fit assessment and post-delivery feedback evidence.
-
-```text
-body + fit preference → FitID
-FitID + garment spec → fit assessment
-fit assessment + outcome → future evidence
-```
-
-The repository deliberately keeps fit intelligence separate from generic behavioral recommendation signals.
-
-### [Engineering Architecture Notes](https://github.com/KeranIND/engineering-architecture-notes)
-
-Architecture notes drawn from the systems I work on: downstream-safe CRM merges, ownership/routing state machines, idempotent integrations, FitID versioning, made-to-measure orchestration, entity resolution and physical-world feedback loops.
-
-## Enterprise architecture background
-
-My enterprise engineering work has included:
-
-- Salesforce architecture with Apex and Lightning Web Components
-- MuleSoft and REST integrations
-- large-volume Lead / Contact / Account data workflows
-- deduplication and merge automation
-- onboarding and ownership workflows
-- opportunity and sales process automation
-- Omni-Channel / routing-related workflows
-- integration-safe data mutation
-- systems supporting business-critical commerce operations at significant scale
-
-The engineering lesson I took from that work is that **correct local code is not enough**. Data mutations have downstream consequences, workflow state must be explicit, and integrations must be designed for retries and partial failure.
-
-## Chanamill
-
-I’m building **[Chanamill](https://chanamill.com)**, a personalized apparel platform centered on **FitID** — a reusable fit identity connecting body measurements, fit preferences, garment specifications, purchase decisions and delivered-fit outcomes.
+The core product loop:
 
 ```text
 Measurement capture
@@ -91,40 +47,57 @@ Current and prototype work across Chanamill has included:
 
 - measurement onboarding and FitID creation
 - explainable shirt / pant recommendations
-- garment visualization
-- configurable and made-to-measure flows
-- Flutter mobile product prototypes
+- garment visualization and 3D avatar / garment workflows
+- configurable and made-to-measure commerce flows
+- Flutter mobile prototypes
 - Next.js web product development
 - image / scanning experiments
-- 3D avatar and garment workflows
-- creator-commerce concepts and storefront flows
+- creator/storefront concepts
 - India manufacturing / fulfillment workflow design
 - phone-based body-capture work in development
 
-Some systems remain private because they contain current product code, manufacturing details, measurement methods, or IP-sensitive logic.
+## Enterprise architecture background
+
+My enterprise work has included:
+
+- Salesforce architecture with Apex and Lightning Web Components
+- MuleSoft and REST integrations
+- large-volume Lead / Contact / Account data workflows
+- deduplication and merge automation
+- onboarding and ownership workflows
+- opportunity and sales process automation
+- Omni-Channel / routing-related workflows
+- integration-safe data mutation and retry-aware workflows
+
+A recurring lesson from that work is that **correct local code is not enough**. Data mutations have downstream consequences, workflow state must be explicit, and integrations must be designed for retries, partial failure, and auditability.
+
+One public reference implementation is based on a CRM identity-resolution problem class I worked on across approximately **600K Leads and 2.4M Contacts**.
+
+## The common engineering pattern
+
+```text
+Identity / context
+        ↓
+Decision logic
+        ↓
+Workflow orchestration
+        ↓
+Operational execution
+        ↓
+Observed outcome
+        ↺
+```
+
+That same pattern links my enterprise systems work to Chanamill: establish trustworthy identity, make explicit decisions, orchestrate the workflow, observe what happened in the real world, and improve the next decision.
 
 ## Technical focus
 
 - **Enterprise platforms:** Salesforce, Apex, LWC, MuleSoft, REST APIs
 - **Architecture:** workflow orchestration, integration boundaries, failure recovery, idempotency
 - **Data:** entity resolution, normalization, deduplication, merge lineage, data quality
-- **Commerce:** customer, product, cart, order, ownership, sales and fulfillment workflows
+- **Commerce:** customer, product, cart, order, ownership, sales, manufacturing and fulfillment workflows
 - **Product engineering:** Flutter, Dart, Next.js, TypeScript
 - **Personalization:** FitID, measurement state, garment specifications, explainable matching, feedback loops
-
-## Engineering philosophy
-
-I prefer systems that preserve business context, make state explicit, treat external systems as independently failing, and make important decisions reproducible later.
-
-The patterns I keep returning to are:
-
-- preserve provenance before destructive changes
-- make retries idempotent
-- version inputs used for irreversible decisions
-- separate observations from derived state
-- expose why a system made a decision
-- design for downstream effects, not only local correctness
-- use human review when automation confidence is not high enough
 
 ## Links
 
@@ -135,4 +108,4 @@ The patterns I keep returning to are:
 
 ---
 
-**Building software that connects enterprise-scale systems thinking with real-world commerce and manufacturing.**
+**Building software that connects enterprise-scale systems thinking with real-world commerce, personalization, and manufacturing.**
