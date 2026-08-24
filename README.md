@@ -1,16 +1,32 @@
 # Kiran Indugula
 
-**Founder, Chanamill | Software / Solutions Architect | Commerce, Personalization & Applied AI**
+**Founder, Chanamill | Software / Solutions Architect | Commerce, Data & Applied AI**
 
-I build systems at the intersection of **commerce, personalization, data, and software architecture**.
+I design and build systems where business workflows, data models, APIs, and product experiences have to work together reliably.
 
 I’m currently building **[Chanamill](https://chanamill.com)** — a personalized apparel platform centered on **FitID**, a reusable fit profile designed to connect body measurements, fit preferences, garment specifications, purchase decisions, and delivered-fit feedback into one learning loop.
 
 My background combines enterprise commerce engineering in the U.S. with firsthand exposure to a multi-generation retail business in India. That combination shaped how I think about Chanamill: not as another fashion storefront, but as a systems problem spanning customer data, product data, fit logic, manufacturing, and post-purchase outcomes.
 
-## What I’m building
+## Selected public engineering work
 
-### Chanamill / FitID
+### [Entity Resolution Engine](https://github.com/KeranIND/entity-resolution-engine)
+
+An explainable record-linkage pipeline for noisy customer data with normalization, blocking, weighted feature scoring, and union-find clustering. Built to show how I approach data quality, entity matching, false-positive control, and scalable comparison strategies.
+
+### [Distributed Order Orchestrator](https://github.com/KeranIND/distributed-order-orchestrator)
+
+A reference saga orchestrator for multi-step commerce workflows. Models idempotency, explicit state transitions, retries, compensation, and failure recovery across inventory, payment, and fulfillment boundaries.
+
+### [Adaptive Personalization Engine](https://github.com/KeranIND/adaptive-personalization-engine)
+
+An event-driven recommendation reference implementation that derives user preference state from behavior and produces transparent ranking explanations. Designed around reproducible feedback loops rather than opaque scoring.
+
+### [Engineering Architecture Notes](https://github.com/KeranIND/engineering-architecture-notes)
+
+Architecture decision records and design notes on idempotency, distributed workflows, entity resolution, integration boundaries, and reliability trade-offs.
+
+## Chanamill / FitID
 
 The core product thesis:
 
@@ -32,48 +48,34 @@ Customer body + fit preferences
 
 The initial wedge is Chanamill-owned personalized apparel, where we can control the product and measurement loop end to end. Over time, the same fit-intelligence layer can extend into creator commerce and retailer integrations.
 
-**Current focus**
-
-- reusable apparel fit identity
-- explainable fit recommendations
-- phone-based body measurement workflows
-- garment-specification matching
-- personalized commerce UX
-- creator-led distribution
-- feedback loops between fit, purchase, and manufacturing outcomes
-
-## Technical background
-
-I’ve worked across enterprise architecture, APIs, workflow automation, data quality, and commerce systems, including large-scale Salesforce and integration work supporting business-critical workflows.
-
-Areas I work in:
+## Technical focus
 
 - **Software architecture** — system design, workflow orchestration, API integrations
 - **Commerce systems** — product, cart, order, customer, and sales workflows
 - **Data systems** — deduplication, normalization, entity matching, data quality
-- **Frontend / product engineering** — Flutter, web product development, user flows
-- **Applied AI / personalization** — recommendation logic, measurement workflows, fit intelligence
+- **Enterprise platforms** — Salesforce, Apex, Lightning Web Components, MuleSoft, REST APIs
+- **Product engineering** — Flutter, Next.js, TypeScript, user-facing commerce flows
+- **Applied personalization** — recommendation logic, measurement workflows, feedback systems
 
-## Selected build work
+## Engineering philosophy
 
-I have built and iterated on multiple Chanamill prototypes across mobile and web, including:
+I prefer systems that are observable rather than opaque, modular rather than tightly coupled, explicit about state and failure modes, and easy to reason about long after the first implementation.
 
-- social-commerce discovery flows
-- personalized product experiences
-- product / variant / cart / order domain models
-- short-form video and story interfaces
-- configurable apparel and design flows
-- mobile scanning and image-input experiments
-- Android build automation
-- FitID onboarding and apparel recommendation experiences
+I care about:
 
-Some current Chanamill systems remain private while the product and IP are being developed. Public repositories here are intentionally curated to show technical execution without exposing proprietary production code.
+- clear domain boundaries
+- idempotent operations
+- measurable failure modes
+- reproducible decisions
+- maintainable abstractions
+- architecture that survives operational reality
 
 ## Product links
 
 - **Chanamill:** https://chanamill.com
 - **Product demo:** https://youtu.be/Ucau6x7gyYk
 - **Android prototype demo:** https://youtu.be/bJX550iU4-A
+- **LinkedIn:** https://www.linkedin.com/in/kiran-indugula-314325171/
 
 ## Founder perspective
 
