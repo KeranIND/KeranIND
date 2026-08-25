@@ -4,7 +4,7 @@
 
 I build systems that connect **identity, decisioning, workflow, transactions, and real-world outcomes**.
 
-I’m currently building **[Chanamill](https://chanamill.com)** — a personalized apparel platform centered on **FitID**, a reusable fit identity that connects body measurements, fit preferences, garment specifications, purchase decisions, manufacturing, and delivered-fit feedback.
+I’m currently building **[Chanamill](https://chanamill.com)** — a personalized apparel platform centered on **FitID**, a reusable fit identity that connects body measurements, fit preferences, garment specifications, purchase decisions, manufacturing, and a planned delivered-fit feedback loop.
 
 My background spans enterprise CRM/data architecture, Salesforce/Apex/LWC, MuleSoft/REST integrations, large-volume deduplication and routing workflows, and consumer product engineering across Flutter and Next.js.
 
@@ -12,9 +12,9 @@ My background spans enterprise CRM/data architecture, Salesforce/Apex/LWC, MuleS
 
 If you are reviewing my work quickly, these four repositories show the progression from enterprise systems to Chanamill:
 
-1. **[Chanamill FitID Personalization Engine](https://github.com/KeranIND/adaptive-personalization-engine)** — versioned FitID, garment-spec matching, explainable fit assessment, measurement provenance, and delivered-fit feedback.
+1. **[Chanamill FitID Personalization Engine](https://github.com/KeranIND/adaptive-personalization-engine)** — versioned FitID, garment-spec matching, explainable fit assessment, measurement provenance, and delivered-fit feedback architecture.
 2. **[Enterprise CRM Entity Resolution Engine](https://github.com/KeranIND/entity-resolution-engine)** — multi-million-record identity resolution patterns, normalization, candidate generation, scoring, merge lineage, and downstream-safe routing.
-3. **[Chanamill Made-to-Measure Order Orchestrator](https://github.com/KeranIND/distributed-order-orchestrator)** — FitID snapshot locking, payment, production, QC, fulfillment, creator attribution, and fit-feedback capture.
+3. **[Chanamill Made-to-Measure Order Orchestrator](https://github.com/KeranIND/distributed-order-orchestrator)** — FitID snapshot locking, payment, production, QC, fulfillment, creator attribution, and fit-feedback capture architecture.
 4. **[Engineering Architecture Notes](https://github.com/KeranIND/engineering-architecture-notes)** — architecture decisions across CRM integrations, idempotency, FitID versioning, 3D visualization boundaries, manufacturing, and closed-loop systems.
 
 These are **clean-room public implementations of problem classes I have actually worked on**. They use synthetic/public-safe abstractions and contain no employer code, private schemas, credentials, or Chanamill production IP.
@@ -55,6 +55,8 @@ Current and prototype work across Chanamill has included:
 - creator/storefront concepts
 - India manufacturing / fulfillment workflow design
 - phone-based body-capture work in development
+
+The delivered-fit feedback loop shown above is part of the product architecture and is intended to improve matching as real order outcomes are collected.
 
 ## Enterprise architecture background
 
